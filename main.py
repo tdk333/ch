@@ -48,7 +48,7 @@ while True:
             "%s")
             '''%(name,title,content,link,picture))
             connection.commit()
-            embed = Webhook(url, color=123123)
+            embed = Webhook(url, color=505358)
             embed.set_author(name=name, icon=picture)
             embed.set_title(title=title,url=link)
             embed.set_desc(parser.unescape(content.replace('<br>','')))
