@@ -7,7 +7,9 @@ import subprocess
 import os
 import signal
 from discord_hooks import Webhook
-url="https://discordapp.com/api/webhooks/486959486595235842/Zb9_hjMGlu3Hpw7qlKHo0kNRJ422oedHlgkRIUgMp0MATQiKofoN2BlYEYedAqk3xRgq"
+from html.parser import HTMLParser
+parser = HTMLParser()
+url="WEBHOOK URL"
 cursor.execute('''CREATE TABLE IF NOT EXISTS news(
     name text,
     title text,
@@ -49,5 +51,5 @@ while True:
             embed = Webhook(url, color=123123)
             embed.set_author(name=name, icon=picture)
             embed.set_title(title=title,url=link)
-            embed.set_desc(content)
+            embed.set_desc(parser.unescape(content.replace('<br>','')))
             embed.post()
