@@ -9,7 +9,7 @@ import signal
 from discord_hooks import Webhook
 from html.parser import HTMLParser
 parser = HTMLParser()
-url="https://discordapp.com/api/webhooks/486959486595235842/Zb9_hjMGlu3Hpw7qlKHo0kNRJ422oedHlgkRIUgMp0MATQiKofoN2BlYEYedAqk3xRgq"
+url="https://discordapp.com/api/webhooks/456420537921568769/xO4Kj_KIRkRi92qGKuutbzCt71L1PzsZ-UyND0cWy5HzUtblAANtNjR6xSQuO-vmJ47L"
 cursor.execute('''CREATE TABLE IF NOT EXISTS news(
     name text,
     title text,
