@@ -6,6 +6,8 @@ import time
 import subprocess
 import os
 import signal
+from discord_hooks import Webhook
+url="WEBHOOK URL"
 cursor.execute('''CREATE TABLE IF NOT EXISTS news(
     name text,
     title text,
@@ -44,8 +46,8 @@ while True:
             "%s")
             '''%(name,title,content,link,picture))
             connection.commit()
-            pro = subprocess.Popen('python3 test123.py', stdout=subprocess.PIPE,
-                                   shell=True, preexec_fn=os.setsid)
-
-            time.sleep(10)
-            os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
+            embed = Webhook(url, color=123123)
+            embed.set_author(name=name, icon=picture)
+            embed.set_title(title=title,url=link)
+            embed.set_desc(content)
+            embed.post()
