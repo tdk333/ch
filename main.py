@@ -7,7 +7,7 @@ import subprocess
 import os
 import signal
 from discord_hooks import Webhook
-url="WEBHOOK URL"
+url="https://discordapp.com/api/webhooks/486959486595235842/Zb9_hjMGlu3Hpw7qlKHo0kNRJ422oedHlgkRIUgMp0MATQiKofoN2BlYEYedAqk3xRgq"
 cursor.execute('''CREATE TABLE IF NOT EXISTS news(
     name text,
     title text,
